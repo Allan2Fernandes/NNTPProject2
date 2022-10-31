@@ -25,6 +25,7 @@ namespace NNTPProject
             //Create instances of the viewmodels, these should be kept alive during the lifetime of the application
             listOfViewModels.Add(new KeyValuePair<string, Bindable>("LoginViewModel", new LoginViewModel()));
             listOfViewModels.Add(new KeyValuePair<string, Bindable>("ShowArticlesListViewModel", new ShowArticlesListViewModel()));
+            listOfViewModels.Add(new KeyValuePair<string, Bindable>("ShowListGroupViewModel", new ShowListGroupViewModel()));
         }
 
         public void ChangeUserControl(UserControl view)

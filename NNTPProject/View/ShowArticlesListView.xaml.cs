@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.Diagnostics.Metrics;
 using System.IO;
 using System.Linq;
 using System.Net.Sockets;
@@ -29,6 +30,7 @@ namespace NNTPProject.View
     public partial class ShowArticlesListView : UserControl
     {
         private ShowArticlesListViewModel showListViewModel = null;
+        private ShowListGroupViewModel showListGroupViewModel = null;
         
         public static StreamReader sr;
         public static StreamWriter sw;
@@ -39,19 +41,15 @@ namespace NNTPProject.View
         public ShowArticlesListView()
         {
             showListViewModel = (ShowArticlesListViewModel)((App)App.Current).GetViewModel("ShowArticlesListViewModel");
+            showListGroupViewModel = (ShowListGroupViewModel)((App)App.Current).GetViewModel("ShowListGroupViewModel");
             this.DataContext = showListViewModel;
             InitializeComponent();
             ListOfGroups.ItemsSource = showListViewModel.ObsArticleCollection;
 
-
-        }
-
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            //Authenticate();
             GetListOfGroups();
         }
+
+
 
         public void GetListOfGroups()
         {
@@ -73,7 +71,7 @@ namespace NNTPProject.View
                         string BeginIndex = Indices.Substring(0, 10);
                         string EndIndex = Indices.Substring(11);
                         EndIndex = EndIndex.Substring(0, 10);
-                        ArticleTitle articleTitle = new ArticleTitle(Title, BeginIndex, EndIndex);
+                        ArticleTitles articleTitle = new ArticleTitles(Title, BeginIndex, EndIndex);
                         showListViewModel.AddEntryToList(articleTitle);
                         //Debug.WriteLine("StartIndex: {0} || EndIndex: {1}", articleTitle.StartIndex, articleTitle.EndIndex);
                     }
@@ -84,5 +82,36 @@ namespace NNTPProject.View
 
         }
 
+        private void ListOfGroups_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            showListGroupViewModel.ObsArticleIndicesCollection.Clear();
+            ArticleTitles articleTitles = (ArticleTitles)ListOfGroups.SelectedItem;
+            string Header = articleTitles.Header;
+            int counter = 0;
+
+            LoginView.sw.WriteLine("group {0}", Header);
+            Debug.WriteLine(LoginView.sr.ReadLine());
+            LoginView.sw.WriteLine("listgroup");
+
+            while (true)
+            {
+                string ArticleIndex = LoginView.sr.ReadLine().Trim();
+                if (ArticleIndex == ".")
+                {
+                    break;
+                }
+                else
+                {
+                    if (counter != 0)
+                    {
+                        showListGroupViewModel.AddEntryToList(new ArticleIndex(ArticleIndex));
+                    }
+                }
+                counter++;
+            }
+
+        }
+
+      
     }
 }

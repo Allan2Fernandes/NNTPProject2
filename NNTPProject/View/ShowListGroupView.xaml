@@ -6,8 +6,24 @@
              xmlns:local="clr-namespace:NNTPProject.View"
              mc:Ignorable="d" 
              Background="White"
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="400" d:DesignWidth="600">
     <Grid>
-            
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="4*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <ListView x:Name="ListViewIndices" Grid.Row="0" Grid.Column="0" SelectionChanged="ListViewIndices_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Index" Width="120" DisplayMemberBinding="{Binding Index}"></GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <TextBox x:Name="ArticleBodyTextBox" Grid.Row="0" Grid.Column="1"></TextBox>
+        <Button Grid.Row="1" Grid.Column="0" Content="Select Another Group" Command="{Binding ChangePageCMD}"></Button>
     </Grid>
 </UserControl>

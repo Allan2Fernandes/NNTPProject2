@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace NNTPProject.Model
 {
-    public class ArticleTitle : Bindable
+    public class ArticleTitles : Bindable
     {
         private string header;
         private string startIndex;
         private string endIndex;    
 
-        public ArticleTitle(string header, string startIndex, string endIndex)
+        public ArticleTitles(string header, string startIndex, string endIndex)
         {
             this.header = header;
             this.startIndex = startIndex;
