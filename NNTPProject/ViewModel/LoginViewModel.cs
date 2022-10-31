@@ -26,7 +26,7 @@ namespace NNTPProject.ViewModel
         }
 
         //Use this command to change page
-        public ICommand ChangePageCMD { get; set; } = new DelegateCommand(() => { ((App)System.Windows.Application.Current).ChangeUserControl(new ShowListView()); });
+        public ICommand ChangePageCMD { get; set; } = new DelegateCommand(() => { ((App)System.Windows.Application.Current).ChangeUserControl(new ShowArticlesListView()); });
 
     }
 }

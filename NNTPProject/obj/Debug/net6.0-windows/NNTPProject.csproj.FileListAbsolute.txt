@@ -21,5 +21,7 @@ C:\Users\allan\source\repos\NNTPProject\NNTPProject\obj\Debug\net6.0-windows\NNT
 C:\Users\allan\source\repos\NNTPProject\NNTPProject\obj\Debug\net6.0-windows\ref\NNTPProject.dll
 C:\Users\allan\source\repos\NNTPProject\NNTPProject\obj\Debug\net6.0-windows\View\LoginView.g.cs
 C:\Users\allan\source\repos\NNTPProject\NNTPProject\obj\Debug\net6.0-windows\View\LoginView.baml
-C:\Users\allan\source\repos\NNTPProject\NNTPProject\obj\Debug\net6.0-windows\View\ShowListView.g.cs
-C:\Users\allan\source\repos\NNTPProject\NNTPProject\obj\Debug\net6.0-windows\View\ShowListView.baml
+C:\Users\allan\source\repos\NNTPProject\NNTPProject\obj\Debug\net6.0-windows\View\ShowArticlesListView.g.cs
+C:\Users\allan\source\repos\NNTPProject\NNTPProject\obj\Debug\net6.0-windows\View\ShowArticlesListView.baml
+C:\Users\allan\source\repos\NNTPProject\NNTPProject\obj\Debug\net6.0-windows\View\ShowListGroupView.g.cs
+C:\Users\allan\source\repos\NNTPProject\NNTPProject\obj\Debug\net6.0-windows\View\ShowListGroupView.baml

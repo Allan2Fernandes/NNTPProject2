@@ -29,8 +29,7 @@ namespace NNTPProject.View
         String serverName = "news.sunsite.dk";
         int serverPort = 119;
         TcpClient socket = null;
-        NetworkStream ns = null;
-        StreamReader reader = null;
+        public static NetworkStream ns = null;
         string recievedMessage;
         public static StreamReader sr;
         public static StreamWriter sw;
@@ -50,12 +49,11 @@ namespace NNTPProject.View
             {
                 socket = new TcpClient(serverName, serverPort);
                 ns = socket.GetStream();
-                ns.Flush();
-                reader = new StreamReader(ns, Encoding.UTF8);
-                recievedMessage = reader.ReadLine();
-
                 sr = new StreamReader(ns, System.Text.Encoding.Default);
                 sw = new StreamWriter(ns);
+                
+                ns.Flush();
+                recievedMessage = sr.ReadLine();
                 sw.AutoFlush = true;
 
                 //Try the username:
@@ -90,7 +88,7 @@ namespace NNTPProject.View
             }
             finally
             {
-                CloseConnection();
+                //CloseConnection();
             }
             return false;
         }
@@ -98,7 +96,8 @@ namespace NNTPProject.View
         public void CloseConnection()
         {
             ns.Close();
-            reader.Close();
+            sr.Close();
+            sw.Close();
             socket.Close();
         }
 

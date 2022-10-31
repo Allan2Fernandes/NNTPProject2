@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\allan\source\repos\NNTPProject\NNTPProject\App.xaml
-3-142829088
+4-967676295
 
-91972225430
+12-1150282474
 194-1103864946
-MainWindow.xaml;View\LoginView.xaml;View\ShowListView.xaml;
+MainWindow.xaml;View\LoginView.xaml;View\ShowArticlesListView.xaml;View\ShowListGroupView.xaml;
 
 False
 
