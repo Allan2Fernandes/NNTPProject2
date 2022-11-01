@@ -144,12 +144,32 @@ namespace NNTPProject.View
         public void Authenticate()
         {
             string[] LogInDetails = DBHandler.GetLogInDetails();
-            UsernameField.Text = LogInDetails[0];
-            string Password = DecodeFrom64(LogInDetails[1]);
-            PasswordField.Text = Password;
+            
+            if(!(UsernameField.Text != "" && PasswordField.Text != ""))
+            {
+                if ((LogInDetails[0] == null || LogInDetails[1] == null))
+                {
+                    if (UsernameField.Text == "" || PasswordField.Text == "")
+                    {
+                        Debug.WriteLine("Everything is null");
+                        return;
+                    }
+                }
+                else
+                {
+                    UsernameField.Text = LogInDetails[0];
+                    string Password = DecodeFrom64(LogInDetails[1]);
+                    PasswordField.Text = Password;
+                }
+            }
+
+            
+            
+
             bool CorrectlyAuthenticated = SetUpConnection(UsernameField.Text, PasswordField.Text);
             if (CorrectlyAuthenticated)
             {
+
                 AuthenticationResponse.Content = "Response: Authenticated";
                 SwitchSceneButton.Visibility = Visibility.Visible;
                 string EncryptedPassword = EncodePasswordToBase64(PasswordField.Text);
