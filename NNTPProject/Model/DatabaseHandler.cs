@@ -95,6 +95,7 @@ namespace NNTPProject.Model
 
         public List<DBGroupEntry> GetSearchedGroups(string PartOfName)
         {
+            OpenConnection();
             PartOfName = PartOfName.Trim();
             List<DBGroupEntry> ReturnedList = new List<DBGroupEntry>();
             
@@ -102,7 +103,7 @@ namespace NNTPProject.Model
             string query = "SELECT * FROM AllGroups WHERE Name like '%@string%';";
             SQLiteCommand myCommand = new SQLiteCommand(query, MyConnection);
             myCommand.Parameters.AddWithValue("@string", PartOfName);
-            OpenConnection();
+            
             
             SQLiteDataReader returnedRow = myCommand.ExecuteReader();
             if (returnedRow.HasRows)

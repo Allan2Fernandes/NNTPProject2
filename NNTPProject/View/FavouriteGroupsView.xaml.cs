@@ -100,8 +100,12 @@ namespace NNTPProject.View
         private void SearchGroupsButton_Click(object sender, RoutedEventArgs e)
         {
             string PartOfName = GroupSearchField.Text;
-            AllGroups = databaseHandler.GetSearchedGroups(PartOfName);            
-            AllGroupsListView.ItemsSource = AllGroups;          
+            //AllGroups = databaseHandler.GetSearchedGroups(PartOfName);            
+            //AllGroupsListView.ItemsSource = AllGroups;
+            IEnumerable<DBGroupEntry> filtered = AllGroups.Where(group => group.Header.Contains(PartOfName));
+
+            
+            AllGroupsListView.ItemsSource = filtered;
         }
 
         private void FavouriteGroupsListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
