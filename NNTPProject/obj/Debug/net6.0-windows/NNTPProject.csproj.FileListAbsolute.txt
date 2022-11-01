@@ -27,3 +27,11 @@ C:\Users\allan\source\repos\NNTPProject\NNTPProject\obj\Debug\net6.0-windows\Vie
 C:\Users\allan\source\repos\NNTPProject\NNTPProject\obj\Debug\net6.0-windows\View\ShowListGroupView.baml
 C:\Users\allan\source\repos\NNTPProject\NNTPProject\obj\Debug\net6.0-windows\View\PostArticleView.g.cs
 C:\Users\allan\source\repos\NNTPProject\NNTPProject\obj\Debug\net6.0-windows\View\PostArticleView.baml
+C:\Users\allan\source\repos\NNTPProject\NNTPProject\bin\Debug\net6.0-windows\System.Data.SQLite.dll
+C:\Users\allan\source\repos\NNTPProject\NNTPProject\bin\Debug\net6.0-windows\runtimes\linux-x64\native\SQLite.Interop.dll
+C:\Users\allan\source\repos\NNTPProject\NNTPProject\bin\Debug\net6.0-windows\runtimes\osx-x64\native\SQLite.Interop.dll
+C:\Users\allan\source\repos\NNTPProject\NNTPProject\bin\Debug\net6.0-windows\runtimes\win-x64\native\SQLite.Interop.dll
+C:\Users\allan\source\repos\NNTPProject\NNTPProject\bin\Debug\net6.0-windows\runtimes\win-x86\native\SQLite.Interop.dll
+C:\Users\allan\source\repos\NNTPProject\NNTPProject\obj\Debug\net6.0-windows\NNTPProject.csproj.CopyComplete
+C:\Users\allan\source\repos\NNTPProject\NNTPProject\obj\Debug\net6.0-windows\View\FavouriteGroupsView.g.cs
+C:\Users\allan\source\repos\NNTPProject\NNTPProject\obj\Debug\net6.0-windows\View\FavouriteGroupsView.baml

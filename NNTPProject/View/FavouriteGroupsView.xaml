@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="NNTPProject.View.FavouriteGroupsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:NNTPProject.View"
+             Background="White"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="600">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="5*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBox x:Name="GroupSearchField" Grid.Row="0" Grid.Column="0" Width="200" Height="30"></TextBox>
+        <Button x:Name="SearchGroupsButton" Grid.Row="0" Grid.Column="1" Content="Search Groups" Click="SearchGroupsButton_Click"></Button>
+        <ListView x:Name="AllGroupsListView" Grid.Row="1" Grid.Column="0" SelectionChanged="AllGroupsListView_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="All Groups" Width="300" DisplayMemberBinding="{Binding Header}"></GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <ListView x:Name="FavouriteGroupsListView" Grid.Row="1" Grid.Column="1" SelectionChanged="FavouriteGroupsListView_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Favourite Groups" Width="300" DisplayMemberBinding="{Binding Header}"></GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="RefreshAllGroupsButton" Content="Refresh All Groups" Grid.Row="2" Grid.Column="0" Click="RefreshAllGroupsButton_Click" ></Button>
+        <Button x:Name="DeleteFavouriteGroupButton" Content="Delete a Favourite Group" Grid.Row="2" Grid.Column="1" Click="DeleteFavouriteGroupButton_Click" ></Button>
+        <Button x:Name="SelectGroup" Content="Select a group" Grid.Row="3" Grid.Column="0" Command="{Binding ChangeArticlesListPageCMD}"></Button>
+        <Button x:Name="ViewArticlesButton" Content="View Articles" Grid.Row="3" Grid.Column="1" Command="{Binding ChangeListGroupPageCMD}"></Button>
+    </Grid>
+</UserControl>

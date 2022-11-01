@@ -28,5 +28,6 @@
         </ListView>
         <Button Grid.Row="1" Content="Display listgroup" Command="{Binding ChangeListGroupPageCMD}"></Button>
         <Button Grid.Row="1" Grid.Column="1" Content="Post Article" Command="{Binding ChangePostArticlePageCMD}"></Button>
+        <Button Grid.Row="1" Grid.Column="2" Content="Favourite Groups" Command="{Binding ChangeFavouriteGroupsPageCMD}"></Button>
     </Grid>
 </UserControl>

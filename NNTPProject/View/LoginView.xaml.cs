@@ -28,7 +28,7 @@ namespace NNTPProject.View
     {
         String serverName = "news.sunsite.dk";
         int serverPort = 119;
-        TcpClient socket = null;
+        static TcpClient socket = null;
         public static NetworkStream ns = null;
         string recievedMessage;
         public static StreamReader sr;
@@ -93,12 +93,18 @@ namespace NNTPProject.View
             return false;
         }
 
-        public void CloseConnection()
+        public static void CloseConnection()
         {
-            ns.Close();
-            sr.Close();
-            sw.Close();
-            socket.Close();
+            try
+            {
+                ns.Close();
+                sr.Close();
+                sw.Close();
+                socket.Close();
+            }catch(Exception e)
+            {
+                Debug.WriteLine("Pointless error");
+            }
         }
 
         public void Authenticate()

@@ -1,6 +1,7 @@
 ﻿using NNTPProject.View;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -17,6 +18,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using NNTPProject.View;
 
 namespace NNTPProject
 {
@@ -32,8 +34,16 @@ namespace NNTPProject
             ((App)App.Current).ContentControlRef = this.mainContent;
 
             ((App)App.Current).ChangeUserControl(new LoginView());
+
+            Closing += OnWindowClosing;
         }
 
-        
+        public void OnWindowClosing(object sender, CancelEventArgs e)
+        {
+            // Handle closing logic, set e.Cancel as needed
+            LoginView.CloseConnection();
+        }
+
+
     }
 }
