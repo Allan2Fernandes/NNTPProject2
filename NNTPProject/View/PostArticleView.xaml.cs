@@ -15,6 +15,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Threading;
+using System.Windows.Controls.Primitives;
 
 namespace NNTPProject.View
 {
@@ -58,7 +59,8 @@ namespace NNTPProject.View
 
             //Get return code and print it to debug
             response = LoginView.sr.ReadLine();
-            Debug.WriteLine(response);
+            ServerResponseLabel.Content = string.Format("Response From Server: {0}", response);
+           
         }
     }
 }

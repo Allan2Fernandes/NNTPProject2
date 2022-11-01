@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data.Common;
 using System.Data.SQLite;
@@ -48,9 +49,12 @@ namespace NNTPProject.Model
             SQLiteCommand myCommand1 = new SQLiteCommand(query1, MyConnection);
             string query2 = "CREATE TABLE IF NOT EXISTS FavouriteGroups (ID INTEGER)";
             SQLiteCommand myCommand2 = new SQLiteCommand(query2, MyConnection);
+            string query3 = "CREATE TABLE IF NOT EXISTS LogInDetails (ID INTEGER PRIMARY KEY, Username TEXT, EncryptedPassword TEXT)";
+            SQLiteCommand myCommand3 = new SQLiteCommand(query3, MyConnection);
             OpenConnection();
             myCommand1.ExecuteNonQuery();
             myCommand2.ExecuteNonQuery();   
+            myCommand3.ExecuteNonQuery();   
             CloseConnection();
         }
 
@@ -175,6 +179,50 @@ namespace NNTPProject.Model
             myCommand.Parameters.AddWithValue("@ID", ID);
             var result = myCommand.ExecuteNonQuery();
             CloseConnection();
+        }
+
+        public void StoreLogInDetails(string Username, string EncryptedPassword)
+        {
+            OpenConnection();
+            //Delete the entry with the Username
+            string DeleteQuery = "DELETE FROM LogInDetails WHERE Username = @Username";
+            SQLiteCommand myCommand = new SQLiteCommand(DeleteQuery, MyConnection);
+            myCommand.Parameters.AddWithValue("@Username", Username);
+            var result = myCommand.ExecuteNonQuery();
+
+            //Insert it again into the table with the updated values
+            
+            string InsertQuery = "INSERT INTO LogInDetails(Username, EncryptedPassword) VALUES (@Username, @EncryptedPassword)";
+            SQLiteCommand myCommand1 = new SQLiteCommand(InsertQuery, MyConnection);
+            myCommand1.Parameters.AddWithValue("@Username", Username);
+            myCommand1.Parameters.AddWithValue("@EncryptedPassword", EncryptedPassword);
+            var result1 = myCommand1.ExecuteNonQuery();
+        }
+
+        public string[] GetLogInDetails()
+        {
+            string[] LogInDetails = new string[2];
+            OpenConnection();
+            string query = "SELECT * FROM LogInDetails LIMIT 1";
+            SQLiteCommand myCommand = new SQLiteCommand(query, MyConnection);
+            SQLiteDataReader returnedRow = myCommand.ExecuteReader();
+            
+            if (returnedRow.HasRows)
+            {
+                while (returnedRow.Read())
+                {
+                    LogInDetails[0] = returnedRow["Username"].ToString();
+                    LogInDetails[1] = returnedRow["EncryptedPassword"].ToString(); 
+                }
+            }
+            else
+            {
+                Debug.WriteLine("Does not have any rows");
+            }
+
+            CloseConnection();
+            return LogInDetails;
+
         }
 
        

@@ -17,6 +17,7 @@
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="5*"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
         <Label Content="From:" Width="50" Height="30" Margin="0,0,200,0" Grid.Row="0"></Label>
         <TextBox x:Name="NameTextBox" Grid.Row="0" Text="Allan Fernandes" Width="100" Height="30"/>
@@ -27,5 +28,6 @@
         <TextBox x:Name="BodyTextBox" Grid.Row="3"></TextBox>
         <Button x:Name="PostButton" Grid.Row="4" Content="Post!" Width="100" Height="30" Margin="0,0,200,0" Click="PostButton_Click"/>
         <Button x:Name="ReturnButton" Grid.Row="4" Content="Return!" Width="100" Height="30" Margin="200,0,0,0" Command="{Binding ChangePageCMD}"></Button>
+        <Label x:Name="ServerResponseLabel"  Grid.Row="5" Content="Server Response:"></Label>
     </Grid>
 </UserControl>

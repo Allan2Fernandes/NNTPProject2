@@ -15,8 +15,8 @@
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <TextBox x:Name="UsernameField" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Text="allan2fernandes@hotmail.com"></TextBox>
-        <TextBox x:Name="PasswordField" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Text="5156c1"></TextBox>
+        <TextBox x:Name="UsernameField" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Width="200" Height="30"></TextBox>
+        <TextBox x:Name="PasswordField" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Width="200" Height="30"></TextBox>
         <Button x:Name="AuthenticateButton" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" Content="Authenticate!" Click="AuthenticateButton_Click" ></Button>
         <Label x:Name="AuthenticationResponse" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Center" Content="Response:"></Label>
         <Button x:Name="SwitchSceneButton" Grid.Row="4" VerticalAlignment="Center" HorizontalAlignment="Center" Content="Switch Scene" Visibility="Hidden" Command="{Binding ChangePageCMD}"></Button>
