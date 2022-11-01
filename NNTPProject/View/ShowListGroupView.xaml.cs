@@ -27,17 +27,24 @@ namespace NNTPProject.View
         private ShowListGroupViewModel showListGroupViewModel;
         public ShowListGroupView()
         {
+            
             showListGroupViewModel = (ShowListGroupViewModel)((App)App.Current).GetViewModel("ShowListGroupViewModel");
             this.DataContext = showListGroupViewModel;
+            
             InitializeComponent();
             ListViewIndices.ItemsSource = showListGroupViewModel.ObsArticleIndicesCollection;
+            Debug.WriteLine(ListViewIndices.Items.Count);
         }
 
         private void ListViewIndices_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            if(ListViewIndices.Items.Count == 0)
+            {
+                return;
+            }
             ArticleIndex SelectedArticleIndex = (ArticleIndex)ListViewIndices.SelectedItem;
             string SelectedIndex = SelectedArticleIndex.Index;
-            Debug.WriteLine(SelectedIndex);
+            
             int counter = 0;
             LoginView.sw.WriteLine("article {0}", SelectedIndex);
             string ArticleBody = "";

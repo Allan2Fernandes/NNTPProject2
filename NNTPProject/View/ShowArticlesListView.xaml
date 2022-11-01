@@ -26,6 +26,7 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" Content="Display listgroup" Command="{Binding ChangePageCMD}"></Button>
+        <Button Grid.Row="1" Content="Display listgroup" Command="{Binding ChangeListGroupPageCMD}"></Button>
+        <Button Grid.Row="1" Grid.Column="1" Content="Post Article" Command="{Binding ChangePostArticlePageCMD}"></Button>
     </Grid>
 </UserControl>

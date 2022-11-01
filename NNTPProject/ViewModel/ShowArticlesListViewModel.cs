@@ -31,6 +31,9 @@ namespace NNTPProject.ViewModel
             ObsArticleCollection.Add(articleTitle);
         }
 
-        public ICommand ChangePageCMD { get; set; } = new DelegateCommand(() => { ((App)System.Windows.Application.Current).ChangeUserControl(new ShowListGroupView()); });
+        public ICommand ChangeListGroupPageCMD { get; set; } = new DelegateCommand(() => { ((App)System.Windows.Application.Current).ChangeUserControl(new ShowListGroupView()); });
+
+        public ICommand ChangePostArticlePageCMD { get; set; } = new DelegateCommand(() => { ((App)System.Windows.Application.Current).ChangeUserControl(new PostArticleView()); });
     }
+
 }

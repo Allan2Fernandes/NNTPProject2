@@ -26,6 +26,7 @@ namespace NNTPProject
             listOfViewModels.Add(new KeyValuePair<string, Bindable>("LoginViewModel", new LoginViewModel()));
             listOfViewModels.Add(new KeyValuePair<string, Bindable>("ShowArticlesListViewModel", new ShowArticlesListViewModel()));
             listOfViewModels.Add(new KeyValuePair<string, Bindable>("ShowListGroupViewModel", new ShowListGroupViewModel()));
+            listOfViewModels.Add(new KeyValuePair<string, Bindable>("PostArticleViewModel", new PostArticleViewModel()));
         }
 
         public void ChangeUserControl(UserControl view)

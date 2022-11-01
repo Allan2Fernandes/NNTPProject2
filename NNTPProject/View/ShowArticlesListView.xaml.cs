@@ -31,6 +31,7 @@ namespace NNTPProject.View
     {
         private ShowArticlesListViewModel showListViewModel = null;
         private ShowListGroupViewModel showListGroupViewModel = null;
+        private PostArticleViewModel postArticleViewModel = null;
         
         public static StreamReader sr;
         public static StreamWriter sw;
@@ -40,13 +41,18 @@ namespace NNTPProject.View
 
         public ShowArticlesListView()
         {
+            
             showListViewModel = (ShowArticlesListViewModel)((App)App.Current).GetViewModel("ShowArticlesListViewModel");
             showListGroupViewModel = (ShowListGroupViewModel)((App)App.Current).GetViewModel("ShowListGroupViewModel");
+            postArticleViewModel = (PostArticleViewModel)((App)App.Current).GetViewModel("PostArticleViewModel");
             this.DataContext = showListViewModel;
+            showListViewModel.ObsArticleCollection.Clear();
             InitializeComponent();
             ListOfGroups.ItemsSource = showListViewModel.ObsArticleCollection;
-
+            
             GetListOfGroups();
+            
+            
         }
 
 
@@ -73,24 +79,31 @@ namespace NNTPProject.View
                         EndIndex = EndIndex.Substring(0, 10);
                         ArticleTitles articleTitle = new ArticleTitles(Title, BeginIndex, EndIndex);
                         showListViewModel.AddEntryToList(articleTitle);
-                        //Debug.WriteLine("StartIndex: {0} || EndIndex: {1}", articleTitle.StartIndex, articleTitle.EndIndex);
+                        
                     }
                 }
                 counter++;
             }
-            Debug.WriteLine(ListOfGroups.Items.Count);
+            
 
         }
 
         private void ListOfGroups_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            showListGroupViewModel.ObsArticleIndicesCollection.Clear();
+            showListGroupViewModel.ObsArticleIndicesCollection.Clear(); 
+            if(ListOfGroups.Items.Count == 0)
+            {
+                return;
+            }
+            
             ArticleTitles articleTitles = (ArticleTitles)ListOfGroups.SelectedItem;
             string Header = articleTitles.Header;
+            Debug.WriteLine(Header);
+            postArticleViewModel.SelectedNewsGroup = Header;
             int counter = 0;
 
             LoginView.sw.WriteLine("group {0}", Header);
-            Debug.WriteLine(LoginView.sr.ReadLine());
+            LoginView.sr.ReadLine();
             LoginView.sw.WriteLine("listgroup");
 
             while (true)

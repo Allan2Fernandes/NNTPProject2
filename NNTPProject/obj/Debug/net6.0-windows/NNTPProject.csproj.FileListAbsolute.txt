@@ -25,3 +25,5 @@ C:\Users\allan\source\repos\NNTPProject\NNTPProject\obj\Debug\net6.0-windows\Vie
 C:\Users\allan\source\repos\NNTPProject\NNTPProject\obj\Debug\net6.0-windows\View\ShowArticlesListView.baml
 C:\Users\allan\source\repos\NNTPProject\NNTPProject\obj\Debug\net6.0-windows\View\ShowListGroupView.g.cs
 C:\Users\allan\source\repos\NNTPProject\NNTPProject\obj\Debug\net6.0-windows\View\ShowListGroupView.baml
+C:\Users\allan\source\repos\NNTPProject\NNTPProject\obj\Debug\net6.0-windows\View\PostArticleView.g.cs
+C:\Users\allan\source\repos\NNTPProject\NNTPProject\obj\Debug\net6.0-windows\View\PostArticleView.baml
