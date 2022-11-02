@@ -92,7 +92,12 @@ namespace NNTPProject.View
 
         private void AllGroupsListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            DBGroupEntry SelectedRow = (DBGroupEntry)AllGroupsListView.SelectedItem;            
+            
+            DBGroupEntry SelectedRow = (DBGroupEntry)AllGroupsListView.SelectedItem;  
+            if(SelectedRow == null)
+            {
+                return;
+            }
             databaseHandler.InsertNewFavouriteGroup(SelectedRow.ID);
             UpdateFavouriteGroupList();
         }

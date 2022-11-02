@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\allan\\source\\repos\\NNTPProject\\NNTPProject\\NNTPProject.csproj": {}
+    "C:\\Users\\allan\\source\\repos\\NNTPProject\\NNTPProject2\\NNTPProject\\NNTPProject.csproj": {}
   },
   "projects": {
-    "C:\\Users\\allan\\source\\repos\\NNTPProject\\NNTPProject\\NNTPProject.csproj": {
+    "C:\\Users\\allan\\source\\repos\\NNTPProject\\NNTPProject2\\NNTPProject\\NNTPProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\allan\\source\\repos\\NNTPProject\\NNTPProject\\NNTPProject.csproj",
+        "projectUniqueName": "C:\\Users\\allan\\source\\repos\\NNTPProject\\NNTPProject2\\NNTPProject\\NNTPProject.csproj",
         "projectName": "NNTPProject",
-        "projectPath": "C:\\Users\\allan\\source\\repos\\NNTPProject\\NNTPProject\\NNTPProject.csproj",
+        "projectPath": "C:\\Users\\allan\\source\\repos\\NNTPProject\\NNTPProject2\\NNTPProject\\NNTPProject.csproj",
         "packagesPath": "C:\\Users\\allan\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\allan\\source\\repos\\NNTPProject\\NNTPProject\\obj\\",
+        "outputPath": "C:\\Users\\allan\\source\\repos\\NNTPProject\\NNTPProject2\\NNTPProject\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

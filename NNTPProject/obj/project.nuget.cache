@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "s90qdBPkdk+gHH5RtLXniNIL26utcTIkaaz1lvEwoPlwMx2JgzhuJMQQul2ou4XvLcnk70FakSWLV3gZ9B7F2w==",
+  "dgSpecHash": "6tI/aTPZ7EA6vl3ac+fSkwJnzm3DU3Xa3HkVQJOj3bMa+KpQbBV+qLxCQ/LgT4V20CKjH9mZF5iCKK4qinDk9A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\allan\\source\\repos\\NNTPProject\\NNTPProject\\NNTPProject.csproj",
+  "projectFilePath": "C:\\Users\\allan\\source\\repos\\NNTPProject\\NNTPProject2\\NNTPProject\\NNTPProject.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\allan\\.nuget\\packages\\stub.system.data.sqlite.core.netstandard\\1.0.116\\stub.system.data.sqlite.core.netstandard.1.0.116.nupkg.sha512",
     "C:\\Users\\allan\\.nuget\\packages\\system.data.sqlite.core\\1.0.116\\system.data.sqlite.core.1.0.116.nupkg.sha512"
