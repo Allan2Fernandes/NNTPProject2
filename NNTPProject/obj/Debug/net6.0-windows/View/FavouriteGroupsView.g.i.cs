@@ -117,7 +117,7 @@ namespace NNTPProject.View {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/NNTPProject;V1.0.0.0;component/view/favouritegroupsview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/NNTPProject;component/view/favouritegroupsview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\View\FavouriteGroupsView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

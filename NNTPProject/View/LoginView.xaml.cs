@@ -131,10 +131,13 @@ namespace NNTPProject.View
         {
             try
             {
-                ns.Close();
-                sr.Close();
-                sw.Close();
-                socket.Close();
+                if(ns != null || sr != null || sw != null || socket != null)
+                {
+                    ns.Close();
+                    sr.Close();
+                    sw.Close();
+                    socket.Close();
+                }             
             }catch(Exception e)
             {
                 Debug.WriteLine("Pointless error");
