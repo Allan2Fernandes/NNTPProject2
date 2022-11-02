@@ -34,7 +34,7 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button x:Name="RefreshAllGroupsButton" Content="Refresh All Groups" Grid.Row="2" Grid.Column="0" Click="RefreshAllGroupsButton_Click" ></Button>
+        <Button x:Name="RefreshAllGroupsButton" Content="Refresh All Groups" Grid.Row="2" Grid.Column="0" Click="RefreshAllGroupsButton_Click" Background="IndianRed"></Button>
         <Button x:Name="DeleteFavouriteGroupButton" Content="Delete a Favourite Group" Grid.Row="2" Grid.Column="1" Click="DeleteFavouriteGroupButton_Click" ></Button>
         <Button x:Name="SelectGroup" Content="Select a group" Grid.Row="3" Grid.Column="0" Command="{Binding ChangeArticlesListPageCMD}"></Button>
         <Button x:Name="ViewArticlesButton" Content="View Articles" Grid.Row="3" Grid.Column="1" Command="{Binding ChangeListGroupPageCMD}"></Button>
