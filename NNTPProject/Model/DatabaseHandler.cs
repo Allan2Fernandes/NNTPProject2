@@ -219,10 +219,9 @@ namespace NNTPProject.Model
             {
                 Debug.WriteLine("Does not have any rows");
             }
-
+            
             CloseConnection();
             return LogInDetails;
-
         }
 
        

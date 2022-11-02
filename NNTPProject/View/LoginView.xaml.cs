@@ -46,7 +46,7 @@ namespace NNTPProject.View
             DBHandler = new DatabaseHandler();
         }
 
-        public string EncodePasswordToBase64(string password)
+        public static string EncodePasswordToBase64(string password)
         {
             try
             {
@@ -61,7 +61,7 @@ namespace NNTPProject.View
             }
         }
 
-        public string DecodeFrom64(string encodedData)
+        public static string DecodeFrom64(string encodedData)
         {
             System.Text.UTF8Encoding encoder = new System.Text.UTF8Encoding();
             System.Text.Decoder utf8Decode = encoder.GetDecoder();
